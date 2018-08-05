@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from utils import today, make_readable, make_return_format
 from conf import URL, BODY_TEMPLATE, CAMPUSES, SEOUL_STORES, ANSUNG_STORES
 import requests
@@ -8,7 +8,10 @@ app = Flask(__name__)
 
 @app.route('/keyboard', methods=['GET'])
 def keyboard():
-    return make_return_format(list(CAMPUSES), '캠퍼스를 선택해주세요.')
+    return jsonify({
+        'type': 'buttons',
+        'buttons': list(CAMPUSES)
+    })
 
 
 @app.route('/message', methods=['POST'])
