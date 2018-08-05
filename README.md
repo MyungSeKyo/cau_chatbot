@@ -8,4 +8,4 @@
 
 ## 스크린샷
 
-<img src="https://raw.githubusercontent.com/MyungSeKyo/cau_chatbot/master/screenshots/1.png" width="200"> <img src="https://raw.githubusercontent.com/MyungSeKyo/cau_chatbot/master/screenshots/2.png" width="200"> <img src="https://raw.githubusercontent.com/MyungSeKyo/cau_chatbot/master/screenshots/3.png" width="200">
+<img src="https://raw.githubusercontent.com/MyungSeKyo/cau_chatbot/master/screenshots/1.png" width="250"> <img src="https://raw.githubusercontent.com/MyungSeKyo/cau_chatbot/master/screenshots/2.png" width="250"> <img src="https://raw.githubusercontent.com/MyungSeKyo/cau_chatbot/master/screenshots/3.png" width="250">
