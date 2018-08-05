@@ -16,7 +16,7 @@ def make_readable(xml):
 
     meal_list = data.get('map').get('vector').get('map')
     if meal_list:
-        result = ''
+        result = date.today().strftime('<%Y년%m월%d일>\n')
         if isinstance(meal_list, dict):
             result += meal_list.get('menunm').get('@value') + '\n'
             result += meal_list.get('tm').get('@value') + '\n'
