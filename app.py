@@ -19,10 +19,10 @@ def message():
     content = request.get_json().get('content')
 
     if content == '서울':
-        return make_return_format(list(SEOUL_STORES), '식당을 선택해주세요.')
+        return make_return_format(list(SEOUL_STORES) + ['뒤로가기'], '식당을 선택해주세요.')
 
     elif content == '안성':
-        return make_return_format(list(ANSUNG_STORES), '식당을 선택해주세요.')
+        return make_return_format(list(ANSUNG_STORES) + ['뒤로가기'], '식당을 선택해주세요.')
 
     elif content == '뒤로가기':
         return make_return_format(list(CAMPUSES), '캠퍼스를 선택해주세요.')
@@ -37,7 +37,7 @@ def message():
             response = requests.post(URL, body)
         except Exception:
             return make_return_format(list(SEOUL_STORES), '오류가 발생했습니다.')
-        return make_return_format(list(SEOUL_STORES), make_readable(response.text))
+        return make_return_format(list(SEOUL_STORES) + ['뒤로가기'], make_readable(response.text))
 
     elif content in ANSUNG_STORES:
         body = BODY_TEMPLATE.format(
@@ -49,7 +49,7 @@ def message():
             response = requests.post(URL, body)
         except Exception:
             return make_return_format(list(ANSUNG_STORES), '오류가 발생했습니다.')
-        return make_return_format(list(ANSUNG_STORES), make_readable(response.text))
+        return make_return_format(list(ANSUNG_STORES) + ['뒤로가기'], make_readable(response.text))
 
     else:
         return make_return_format(list(CAMPUSES), '오류가 발생했습니다.')
