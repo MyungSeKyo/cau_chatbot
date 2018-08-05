@@ -48,7 +48,7 @@ def message():
         try:
             response = requests.post(URL, body)
         except Exception:
-            return make_return_format(list(SEOUL_STORES), '오류가 발생했습니다.')
+            return make_return_format(list(ANSUNG_STORES), '오류가 발생했습니다.')
         return make_return_format(list(ANSUNG_STORES), make_readable(response.text))
 
     else:
@@ -56,4 +56,4 @@ def message():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
