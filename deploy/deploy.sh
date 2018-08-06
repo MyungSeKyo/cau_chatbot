@@ -1,0 +1,16 @@
+apt-get update;
+apt-get install -y nginx;
+apt-get install -y supervisor;
+apt-get install python3;
+apt-get install python3-pip;
+pip3 install virtualenv;
+virtualenv -p python3 $HOME/cau_chatbot/env;
+source $HOME/cau_chatbot/env/bin/activate;
+pip install -r $HOME/cau_chatbot/requirements.txt;
+rm /etc/nginx/site-availables/default;
+ln -s $HOME/cau_chatbot/deploy/nginx.conf /etc/nginx/site-availables/default;
+ln -s $HOME/cau_chatbot/deploy/supervisor.conf /etc/supervisor/conf.d/supervisor.conf;
+superviosorctl reread;
+superviosorctl update;
+superviosorctl start cau_chatbot;
+service nginx restart;
