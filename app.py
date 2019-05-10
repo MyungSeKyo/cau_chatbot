@@ -61,8 +61,7 @@ def message():
 # 요청하기전 memory cache에 최신 값이 존재하면 cache에서 불러옴
 def request_post(url, body):
     response = RESPONSE_CACHE.get(body)
-    if response:
-        if today() == response.get('date'):
+    if response and today() == response.get('date'):
             return response.get('body')
 
     response = requests.post(url, body)
